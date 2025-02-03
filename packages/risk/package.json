@@ -1,0 +1,17 @@
+{
+  "name": "@depgraph/risk",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@depgraph/db": "workspace:*",
+    "@depgraph/shared": "workspace:*",
+    "drizzle-orm": "^0.44.2",
+    "zod": "^4.4.3"
+  }
+}

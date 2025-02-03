@@ -1,0 +1,27 @@
+{
+  "name": "@depgraph/crawler",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@depgraph/db": "workspace:*",
+    "@depgraph/shared": "workspace:*",
+    "better-sqlite3": "^12.10.0",
+    "bullmq": "^5.77.3",
+    "drizzle-orm": "^0.45.2",
+    "ioredis": "^5.10.1",
+    "minio": "^8.0.7",
+    "nodemailer": "^8.0.9",
+    "undici": "^8.3.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^25.9.1",
+    "@types/nodemailer": "^8.0.0"
+  }
+}
