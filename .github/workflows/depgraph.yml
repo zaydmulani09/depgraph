@@ -1,0 +1,26 @@
+name: depgraph dependency scan
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  scan:
+    name: Scan dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run depgraph scan
+        uses: ./packages/action
+        with:
+          api-url: ${{ secrets.DEPGRAPH_API_URL }}
+          api-key: ${{ secrets.DEPGRAPH_API_KEY }}
+          manifest-path: package.json
+          ecosystem: npm
+          fail-on: block
+          post-comment: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}

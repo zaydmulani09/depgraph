@@ -1,0 +1,46 @@
+name: 'depgraph CI Gate'
+description: 'Scan your dependencies for risk using depgraph and fail CI on policy violations'
+author: 'zaydmulani09'
+
+inputs:
+  api-url:
+    description: 'URL of your depgraph API server'
+    required: true
+    default: 'http://localhost:3001'
+  api-key:
+    description: 'API key for the depgraph API'
+    required: true
+  manifest-path:
+    description: 'Path to dependency manifest file (package.json, requirements.txt, or Cargo.toml)'
+    required: false
+    default: 'package.json'
+  ecosystem:
+    description: 'Package ecosystem (npm, pypi, cargo)'
+    required: false
+    default: 'npm'
+  fail-on:
+    description: 'Minimum violation action level to fail CI: block, warn, or require_approval'
+    required: false
+    default: 'block'
+  post-comment:
+    description: 'Post a summary comment to the PR (requires GITHUB_TOKEN)'
+    required: false
+    default: 'true'
+  github-token:
+    description: 'GitHub token for posting PR comments'
+    required: false
+    default: '${{ github.token }}'
+
+outputs:
+  violations-found:
+    description: 'Number of policy violations found'
+  block-count:
+    description: 'Number of block-level violations'
+  warn-count:
+    description: 'Number of warn-level violations'
+  risk-summary:
+    description: 'JSON string with full violation summary'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
