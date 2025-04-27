@@ -1,0 +1,30 @@
+{
+  "name": "lodash",
+  "description": "Lodash modular utilities.",
+  "homepage": "https://lodash.com/",
+  "repository": { "url": "git+https://github.com/lodash/lodash.git" },
+  "dist-tags": { "latest": "4.17.21" },
+  "time": {
+    "created": "2012-04-07T00:00:00.000Z",
+    "modified": "2021-02-20T12:00:00.000Z",
+    "4.17.21": "2021-02-20T00:00:00.000Z",
+    "4.17.20": "2020-10-14T00:00:00.000Z"
+  },
+  "versions": {
+    "4.17.21": {
+      "version": "4.17.21",
+      "license": "MIT",
+      "dependencies": {},
+      "dist": { "tarball": "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz" },
+      "maintainers": [{ "name": "jdalton", "email": "john.david.dalton@gmail.com" }]
+    },
+    "4.17.20": {
+      "version": "4.17.20",
+      "license": "MIT",
+      "dependencies": {},
+      "dist": { "tarball": "https://registry.npmjs.org/lodash/-/lodash-4.17.20.tgz" },
+      "maintainers": [{ "name": "jdalton", "email": "john.david.dalton@gmail.com" }]
+    }
+  },
+  "maintainers": [{ "name": "jdalton", "email": "john.david.dalton@gmail.com" }]
+}

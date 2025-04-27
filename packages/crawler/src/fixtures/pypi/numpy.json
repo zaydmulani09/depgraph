@@ -1,0 +1,22 @@
+{
+  "info": {
+    "name": "numpy",
+    "version": "1.25.0",
+    "summary": "Fundamental package for array computing in Python.",
+    "home_page": "https://numpy.org",
+    "project_urls": { "Source": "https://github.com/numpy/numpy" },
+    "license": "BSD",
+    "author": "Travis E. Oliphant et al.",
+    "author_email": "numpy-discussion@python.org",
+    "maintainer": null,
+    "maintainer_email": null,
+    "requires_python": ">=3.9",
+    "requires_dist": [],
+    "classifiers": []
+  },
+  "releases": {
+    "1.25.0": [{ "filename": "numpy-1.25.0.tar.gz", "url": "https://files.pythonhosted.org/packages/numpy-1.25.0.tar.gz", "upload_time": "2023-06-17T00:00:00", "packagetype": "sdist", "python_version": "source", "size": 10700000, "requires_python": ">=3.9", "digests": { "sha256": "abc", "md5": "def" } }],
+    "1.24.0": [{ "filename": "numpy-1.24.0.tar.gz", "url": "https://files.pythonhosted.org/packages/numpy-1.24.0.tar.gz", "upload_time": "2022-12-18T00:00:00", "packagetype": "sdist", "python_version": "source", "size": 10500000, "requires_python": ">=3.8", "digests": { "sha256": "ghi", "md5": "jkl" } }]
+  },
+  "urls": []
+}

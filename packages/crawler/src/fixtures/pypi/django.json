@@ -1,0 +1,22 @@
+{
+  "info": {
+    "name": "Django",
+    "version": "4.2.0",
+    "summary": "A high-level Python web framework that encourages rapid development and clean, pragmatic design.",
+    "home_page": "https://www.djangoproject.com/",
+    "project_urls": { "Source": "https://github.com/django/django" },
+    "license": "BSD-3-Clause",
+    "author": "Django Software Foundation",
+    "author_email": "foundation@djangoproject.com",
+    "maintainer": null,
+    "maintainer_email": null,
+    "requires_python": ">=3.8",
+    "requires_dist": ["asgiref>=3.6.0,<4", "sqlparse>=0.3.1"],
+    "classifiers": []
+  },
+  "releases": {
+    "4.2.0": [{ "filename": "Django-4.2.0.tar.gz", "url": "https://files.pythonhosted.org/packages/Django-4.2.0.tar.gz", "upload_time": "2023-04-03T00:00:00", "packagetype": "sdist", "python_version": "source", "size": 10200000, "requires_python": ">=3.8", "digests": { "sha256": "abc", "md5": "def" } }],
+    "4.1.0": [{ "filename": "Django-4.1.0.tar.gz", "url": "https://files.pythonhosted.org/packages/Django-4.1.0.tar.gz", "upload_time": "2022-08-03T00:00:00", "packagetype": "sdist", "python_version": "source", "size": 9900000, "requires_python": ">=3.8", "digests": { "sha256": "ghi", "md5": "jkl" } }]
+  },
+  "urls": []
+}

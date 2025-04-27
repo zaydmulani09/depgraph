@@ -1,0 +1,37 @@
+{
+  "dependencies": [
+    {
+      "id": 101,
+      "version_id": 10,
+      "crate_id": "mio",
+      "req": "^0.8.8",
+      "optional": false,
+      "default_features": true,
+      "features": ["os-ext"],
+      "kind": "normal",
+      "target": null
+    },
+    {
+      "id": 102,
+      "version_id": 10,
+      "crate_id": "bytes",
+      "req": "^1.5",
+      "optional": false,
+      "default_features": true,
+      "features": [],
+      "kind": "normal",
+      "target": null
+    },
+    {
+      "id": 103,
+      "version_id": 10,
+      "crate_id": "libc",
+      "req": "^0.2.148",
+      "optional": false,
+      "default_features": true,
+      "features": [],
+      "kind": "normal",
+      "target": "cfg(unix)"
+    }
+  ]
+}
