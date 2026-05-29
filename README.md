@@ -70,34 +70,6 @@ pnpm benchmark
 
 depgraph is a monorepo with six packages. `@depgraph/crawler` drives all data acquisition: three registry crawlers (npm, PyPI, Cargo) fan out jobs through BullMQ queues, normalize raw responses into a unified schema, and persist to PostgreSQL via Drizzle. A GitHub ingestion pipeline enriches packages with commit/maintainer signals; an OSV.dev integration populates advisories. `@depgraph/risk` computes six-dimension risk scores from the live DB state; `@depgraph/api` exposes the data over a Hono REST API; `@depgraph/ui` renders the React frontend. Snapshots are taken daily and diffed to power the drift-detection alerting system.
 
-## Prompt roadmap
-
-| Prompt | Feature | Status |
-|--------|---------|--------|
-| P1 | Repo scaffold + CONTEXT.md | ✅ |
-| P2 | Database schema | ✅ |
-| P3 | npm registry crawler | ✅ |
-| P4 | GitHub metadata + maintainer signals | ✅ |
-| P5 | OSV.dev advisory ingestion | ✅ |
-| P6 | Risk engine v1 | ✅ |
-| P7 | Transitive graph + blast radius | ✅ |
-| P8 | Snapshot system | ✅ |
-| P9 | Policy engine | ✅ |
-| P10 | Upgrade simulator | ✅ |
-| P11 | REST API | ✅ |
-| P12 | React frontend v1 | ✅ |
-| P13 | Graph explorer UI | ✅ |
-| P14 | Historical diff viewer + policy UI | ✅ |
-| P15 | Time-series signals + abandonment detector | ✅ |
-| P16 | Forecasting UI | ✅ |
-| P17 | PyPI crawler | ✅ |
-| P18 | Cargo crawler | ✅ |
-| P19 | Cross-ecosystem normalization | ✅ |
-| P20 | Portfolio risk dashboard | ✅ |
-| P21 | CI gate GitHub Action | ✅ |
-| P22 | Drift detection + alerting | ✅ |
-| P23 | Benchmark suite + local dev mode | ✅ |
-| P24 | Git history + GitHub push | ✅ |
 
 ## Contributing
 
