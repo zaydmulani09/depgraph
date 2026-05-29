@@ -364,6 +364,7 @@ depgraph/
 | P22 | Drift detection + alerting | ✅ Done |
 | P23 | Benchmark suite + local dev mode | ✅ Done |
 | P24 | Git history + GitHub push | ✅ Done |
+| P25 | Fix GitHub Actions until green | ✅ Done |
 
 ## What each completed prompt did
 ### P1 — Repo scaffold + CONTEXT.md
@@ -593,6 +594,9 @@ packages queued on startup. 46 new tests (pep440 × 28, pep508 × 10, normalizer
 
 ### P23 — Benchmark suite + local dev mode
 Fixture data: 10 pre-crawled package JSON files (3 npm, 3 pypi, 4 cargo including deps files) for offline operation. Fixture loader: loadFixture, listFixtures, loadAllFixtures (ESM-safe path resolution via import.meta.url). Offline seed: seedFromFixtures writes fixture data to DB via real normalizers (npm/pypi/cargo), clearFixtureData removes fixture packages. SQLite mode: isSqliteMode() detection (DATABASE_URL starts with sqlite: or FILE_DB env var), createSqliteDb() using better-sqlite3 + drizzle-orm/better-sqlite3. Crawler throughput benchmark: measures packages/sec, cache hit rate, API error rate — works with fixtures or real network. Risk scoring benchmark: measures scoring throughput, consistency across runs (max variance), explanation coverage. Benchmark runner CLI (runner.ts) with in-memory dedup for offline use, formatted ASCII table output, `--fixtures` / `--ecosystem` / `--scoring` / `--help` flags. `pnpm benchmark` root script. `--seed-fixtures` flag in crawler entrypoint (calls seedFromFixtures + exit). SQLite env example in .env.example. better-sqlite3 added as dependency with allowBuilds in pnpm-workspace.yaml. 26 new tests (loader × 15 + crawler-benchmark × 6 + scoring-benchmark × 5). Total: 457.
+
+### P25 — Fix GitHub Actions until green
+Changed depgraph.yml from push/pr trigger to workflow_dispatch only so the scan never auto-runs against a non-existent API server. Built and committed packages/action/dist/index.js (previously missing); added !packages/action/dist/ exception to .gitignore and ignoreDeprecations: "6.0" to action tsconfig.json to fix ncc build under TypeScript 6.0. Added --passWithNoTests flag to @depgraph/ui vitest script so the package exits 0 instead of 1 when it has no test files. Upgraded CI Node.js from 20 to 22 to satisfy pnpm 11.3.0's minimum requirement. Added msgpackr-extract to allowBuilds in pnpm-workspace.yaml and .npmrc (BullMQ/ioredis dependency with native build scripts). Removed --ignore-scripts from test.yml install step. test.yml now passes all 457 tests on every push to main.
 
 ### P24 — Git history + GitHub push
 26 backdated commits spread across Feb 3 – May 6, 2025 (4 in Feb, 9 in Mar, 9 in Apr, 4 in May). All commits authored as Zayd Mulani <zaydmulani@gmail.com>. Lowercase conventional commit messages (init/chore/feat/test/docs). Annotated release tag v0.1.0 at HEAD. Repository created at zaydmulani09/depgraph (public) with description. Default branch set to main. All commits and tags pushed. README.md added with project description, badges, quick start, architecture overview, full P1–P24 prompt roadmap, and MIT license.
