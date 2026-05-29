@@ -1,10 +1,16 @@
 name: depgraph dependency scan
 
 on:
-  pull_request:
-    branches: [main]
-  push:
-    branches: [main]
+  workflow_dispatch:
+    inputs:
+      manifest-path:
+        description: 'Path to manifest file'
+        required: false
+        default: 'package.json'
+      ecosystem:
+        description: 'Ecosystem (npm, pypi, cargo)'
+        required: false
+        default: 'npm'
 
 jobs:
   scan:
@@ -19,8 +25,8 @@ jobs:
         with:
           api-url: ${{ secrets.DEPGRAPH_API_URL }}
           api-key: ${{ secrets.DEPGRAPH_API_KEY }}
-          manifest-path: package.json
-          ecosystem: npm
+          manifest-path: ${{ inputs.manifest-path }}
+          ecosystem: ${{ inputs.ecosystem }}
           fail-on: block
-          post-comment: true
+          post-comment: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
